@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OralVis Healthcare</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>OralVis Healthcare</h1>
+    </div>
+    <div class="content">
+
+        <div id="loginPage" class="login-container">
+            <h2>Login to OralVis Healthcare</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required />
+            <input type="password" id="loginPassword" placeholder="Password" required />
+            <button onclick="login()">Login</button>
+            <button onclick="showRegister()">Register</button>
+            <button onclick="loginAsGuest()">Continue as Guest</button>
+        </div>
+
+        <div id="appointmentPage" class="container hidden">
+            <div class="container-header">
+                <h2>OralVis Healthcare</h2>
+            </div>
+            <div class="auth-section">
+                <span id="userStatus">Guest User</span>
+                <button onclick="logout()">Logout</button>
+            </div>
+            <div class="next-appointment" id="nextAppointment">
+                <h3>Next Appointment</h3>
+                <p id="nextAppointmentDetails">No upcoming appointments.</p>
+            </div>
+            <h3>Book a Checkup</h3>
+            <div class="dentist-list">
+                <label for="dentistSelect">Select Dentist</label>
+                <select id="dentistSelect">
+                    <option value="">Choose a dentist...</option>
+                </select>
+            </div>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="appointmentDate">Date</label>
+                    <input type="date" id="appointmentDate" required />
+                </div>
+                <div class="input-group">
+                    <label for="appointmentTime">Time</label>
+                    <input type="time" id="appointmentTime" required />
+                </div>
+                <button onclick="bookAppointment()">Book Appointment</button>
+            </div>
+            <h3>Your Appointments</h3>
+            <ul id="appointmentList"></ul>
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>Checkup Results</h3>
+                <div id="resultsContent"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
